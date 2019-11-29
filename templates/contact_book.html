@@ -4,4 +4,11 @@
 
     <a href="/add">Añadir contacto</a>
 
+
+    {% for contact in contacts %}
+        <li>
+            {{contact.name}} <a href="/contacts/{{ contact.key.id() }}">Ver Más</a>
+        </li>
+    {% endfor %}
+
 {% endblock %}
