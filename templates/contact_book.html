@@ -7,7 +7,9 @@
 
     {% for contact in contacts %}
         <li>
-            {{contact.name}} <a href="/contacts/{{ contact.key.id() }}">Ver Más</a>
+            {{contact.name}} 
+            <a href="/contacts/{{ contact.key.id() }}">Ver Más</a>
+            <a href="/update/{{ contact.key.id() }}">Actualizar</a>
         </li>
     {% endfor %}
 

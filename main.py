@@ -29,13 +29,20 @@ def contact_details(uid):
         return redirect('/', code=301)
     return render_template('contact.html', contact=contact)
 
+@app.route(r'/update/<uid>', methods=['GET', 'POST'])
+def update_contact(uid):
+    contact = Contact.get_by_id(int(uid))
+    if request.form:
+        contact.name = request.form.get('name')
+        contact.phone = request.form.get('phone')
+        contact.email = request.form.get('email')
+        contact.put()
+        return redirect('/contacts/{}'.format(contact.key.id()))
+    return render_template('update_contact.html', contact=contact)
+
 @app.route(r'/delete', methods=['POST'])
 def delete():
     contact_id = request.form.get('uid')
     contact = Contact.get_by_id(int(contact_id))
     contact.key.delete()
     return redirect('/contacts/{}'.format(contact.key.id()))
-
-
-
-
