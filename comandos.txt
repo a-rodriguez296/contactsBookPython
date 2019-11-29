@@ -9,3 +9,22 @@ pip install -r requirements.txt
 
 Para instalar las librerías externas Y crear carpeta lib 
 pip install -r requirements.txt -t lib
+
+
+
+////////////////////////////////////////////
+// Google Cloud
+////////////////////////////////////////////
+
+1. Descargar el SDK
+2. Ir a la carpeta donde quedó el archivo
+3. correr instal.sh
+4. Reiniciar la consola
+5. para asegurarme q tengo gcloud, correr which gcloud. Ahi deberá aparecer la versión (este comando se debe escribir en un terminal por fuera del entorno virtual)
+6. Para inicializar el servidor local, correo dev_appserver.py . (pilas con el punto después del py)
+
+//Inicializar en la nube
+1. Crear el proyecto en gcloud
+2. Crear un appengine con lenguaje python
+3. en la consola, gcloud auth login
+4. gcloud app deploy  --project (projectid)

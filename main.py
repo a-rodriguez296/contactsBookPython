@@ -19,6 +19,4 @@ def add_contact():
     return render_template('add_contact.html')
 
 
-#este comando sirve para correr el proyecto en Flask. Una vez incluyamos app-engine esto pierde validez
-if __name__ == '__main__':
-    app.run()
+
