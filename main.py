@@ -9,7 +9,6 @@ app.secret_key = 'some_secret'
 
 @app.route(r'/', methods=['GET'])
 def contact_book():
-    print("entro")
     return render_template('contact_book.html')
 
 @app.route(r'/add', methods=['GET', 'POST'])

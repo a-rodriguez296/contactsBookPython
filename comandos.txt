@@ -28,3 +28,6 @@ pip install -r requirements.txt -t lib
 2. Crear un appengine con lenguaje python
 3. en la consola, gcloud auth login
 4. gcloud app deploy  --project (projectid)
+
+Si ya tengo otro proyecto en el local server de mi computador, hay que limpiar la base de datos
+dev_appserver.py --clear_datastore=yes app.yaml
