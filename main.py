@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from contact_model import Contact
 
 app = Flask(__name__)
@@ -28,6 +28,13 @@ def contact_details(uid):
     if not contact:
         return redirect('/', code=301)
     return render_template('contact.html', contact=contact)
+
+@app.route(r'/delete', methods=['POST'])
+def delete():
+    contact_id = request.form.get('uid')
+    contact = Contact.get_by_id(int(contact_id))
+    contact.key.delete()
+    return redirect('/contacts/{}'.format(contact.key.id()))
 
 
 

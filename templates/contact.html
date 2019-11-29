@@ -7,6 +7,12 @@
 
     <hr>
 
+    <form action="/delete" method="POST">
+        <input type="hidden" name="uid" value="{{ contact.key.id() }}">
+        <button type="submit">Eliminar</button>
+    </form>
+
+
     <p>
         <a href="/">Regresar</a>
     </p>
