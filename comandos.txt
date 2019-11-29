@@ -1,0 +1,11 @@
+Para crear el ambiente virtual
+virtualenv venv
+
+Para activar ambiente virtual
+source venv/bin/activate
+
+Para instalar las librerías externas
+pip install -r requirements.txt
+
+Para instalar las librerías externas Y crear carpeta lib 
+pip install -r requirements.txt -t lib
